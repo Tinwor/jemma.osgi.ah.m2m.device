@@ -224,16 +224,19 @@
 			<groupId>org.eclipse.osgi</groupId>
 			<artifactId>org.eclipse.osgi</artifactId>
 			<version>${org.eclipse.osgi.version}</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>org.apache.httpcomponents.httpcore</artifactId>
 			<version>4.1.0</version>
+			<scope>compile</scope>
 		</dependency> 
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>org.apache.httpcomponents.httpclient</artifactId>
 			<version>4.1.0</version>
+			<scope>compile</scope>
 		</dependency>
 		<!--
 		
