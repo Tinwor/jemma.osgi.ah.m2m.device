@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1437373512978
+Bnd-LastModified: 1437840918283
 Build-Jdk: 1.8.0_45
 Built-By: tomasi
 Bundle-Activator: org.energy_home.jemma.osgi.ah.m2m.device.M2MDeviceActi
@@ -25,15 +25,16 @@ Export-Package: org.energy_home.jemma.ah.m2m.device;version="1.3.0";uses
 Import-Package: org.energy_home.jemma.utils.encrypt;version="[1.0.0,1.1.
  0)",org.energy_home.jemma.utils.rest;version="[1.0.0,1.1.0)",org.energy
  _home.jemma.utils.xml.jaxb;version="[1.0.0,1.1.0)",javax.xml.bind,javax
- .xml.bind.annotation,org.slf4j;version="[1.6,2)",org.eclipse.osgi.frame
- work.console;version="1.0.0",org.osgi.framework;version="[1.5,2)",org.a
- pache.http;resolution:=optional;version="[4.1,5)",org.apache.http.entit
- y;resolution:=optional;version="[4.1,5)",org.energy_home.jemma.ah.m2m.d
- evice;resolution:=optional;version="[1.3,2)",org.energy_home.jemma.m2m;
- resolution:=optional;version="[1.3,2)",org.energy_home.jemma.m2m.connec
- tion;resolution:=optional;version="[1.2,2)",javax.xml.bind.annotation.a
- dapters,javax.xml.namespace,org.apache.commons.codec,javax.xml.bind.hel
- pers,org.energy_home.jemma.utils.datetime;version="1.0.1"
+ .xml.bind.annotation,org.apache.http;version="[4.1,5)",org.apache.http.
+ entity;version="[4.1,5)",org.slf4j;version="[1.6,2)",org.eclipse.osgi.f
+ ramework.console;version="1.0.0",org.osgi.framework;version="[1.5,2)",o
+ rg.energy_home.jemma.ah.m2m.device;resolution:=optional;version="[1.3,2
+ )",org.energy_home.jemma.m2m;resolution:=optional;version="[1.3,2)",org
+ .energy_home.jemma.m2m.connection;resolution:=optional;version="[1.2,2)
+ ",org.energy_home.jemma.utils.datetime;version="1.0.1",javax.xml.namesp
+ ace,javax.xml.bind.annotation.adapters,javax.xml.bind.helpers,org.apach
+ e.http.client;version="[4.1,5)",org.apache.commons.codec,org.apache.htt
+ p.util;version="[4.1,5)"
 Require-Bundle: org.apache.httpcomponents.httpclient;bundle-version="4.1
  .0",org.apache.httpcomponents.httpcore;bundle-version="4.1.0"
 Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.5))"
