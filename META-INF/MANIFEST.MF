@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1437840918283
-Build-Jdk: 1.8.0_45
-Built-By: tomasi
+Bnd-LastModified: 1438013450876
+Build-Jdk: 1.7.0_45
+Built-By: bluewind
 Bundle-Activator: org.energy_home.jemma.osgi.ah.m2m.device.M2MDeviceActi
  vator
 Bundle-Category: Automation@Home
@@ -10,7 +10,7 @@ Bundle-Name: M2M Device
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-SymbolicName: jemma.osgi.ah.m2m.device;singleton:=true
 Bundle-Vendor: Telecom Italia
-Bundle-Version: 1.2.15
+Bundle-Version: 1.2.16
 Created-By: Apache Maven Bundle Plugin
 Embed-Dependency: JAXBNamespacePrefixMapper,!*
 Export-Package: org.energy_home.jemma.ah.m2m.device;version="1.3.0";uses
@@ -27,13 +27,13 @@ Import-Package: org.energy_home.jemma.utils.encrypt;version="[1.0.0,1.1.
  _home.jemma.utils.xml.jaxb;version="[1.0.0,1.1.0)",javax.xml.bind,javax
  .xml.bind.annotation,org.apache.http;version="[4.1,5)",org.apache.http.
  entity;version="[4.1,5)",org.slf4j;version="[1.6,2)",org.eclipse.osgi.f
- ramework.console;version="1.0.0",org.osgi.framework;version="[1.5,2)",o
+ ramework.console;version="1.0.0",org.osgi.framework;version="[1.8,2)",o
  rg.energy_home.jemma.ah.m2m.device;resolution:=optional;version="[1.3,2
  )",org.energy_home.jemma.m2m;resolution:=optional;version="[1.3,2)",org
  .energy_home.jemma.m2m.connection;resolution:=optional;version="[1.2,2)
- ",org.energy_home.jemma.utils.datetime;version="1.0.1",javax.xml.namesp
- ace,javax.xml.bind.annotation.adapters,javax.xml.bind.helpers,org.apach
- e.http.client;version="[4.1,5)",org.apache.commons.codec,org.apache.htt
+ ",org.energy_home.jemma.utils.datetime;version="1.0.1",javax.xml.bind.h
+ elpers,javax.xml.bind.annotation.adapters,org.apache.http.client;versio
+ n="[4.1,5)",org.apache.commons.codec,javax.xml.namespace,org.apache.htt
  p.util;version="[4.1,5)"
 Require-Bundle: org.apache.httpcomponents.httpclient;bundle-version="4.1
  .0",org.apache.httpcomponents.httpcore;bundle-version="4.1.0"
