@@ -32,6 +32,8 @@
 		<org.energy-home.jemma.osgi.utils.version>1.0.6</org.energy-home.jemma.osgi.utils.version>
 		<org.eclipse.osgi.version>3.10.0</org.eclipse.osgi.version>
 		<org.apache.commons.httpclient.version>3.1.0</org.apache.commons.httpclient.version>
+		<org.apache.httpcomponents.httpclient.version>4.1.0</org.apache.httpcomponents.httpclient.version>
+		<org.apache.httpcomponents.httpcore.version>4.1.0</org.apache.httpcomponents.httpcore.version>		
 	</properties>
 	
 	<build>
@@ -71,6 +73,10 @@
 							 javax.xml.bind.helpers,
 							 javax.xml.namespace,
 							 org.apache.commons.codec,
+							 org.apache.http;version="[4.1,5)",
+							 org.apache.http.util;version="[4.1,5)",
+							 org.apache.http.entity;version="[4.1,5)",
+							 org.apache.http.client;version="[4.1,5)",							 
 							 org.slf4j;version="[1.6,2)",
 							 org.eclipse.osgi.framework.console;version="1.0.0",
 							 org.osgi.framework,*;resolution:=optional,
@@ -257,5 +263,17 @@
 			<artifactId>jaxb-api-osgi</artifactId>
 			<version>${jaxb-api-osgi.version}</version>
 		</dependency>  -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>org.apache.httpcomponents.httpclient</artifactId>
+			<version>${org.apache.httpcomponents.httpclient.version}</version>			
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>org.apache.httpcomponents.httpcore</artifactId>
+			<version>${org.apache.httpcomponents.httpcore.version}</version>			
+			<scope>compile</scope>
+		</dependency>				
 	</dependencies>
 </project>
