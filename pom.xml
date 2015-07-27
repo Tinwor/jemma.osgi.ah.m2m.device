@@ -26,7 +26,7 @@
 	<version>1.2.16</version>
 	<name>M2M Device</name>
 	<properties>
-	
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- Internal dependencies version properties -->
 		
 		<org.energy-home.jemma.osgi.utils.version>1.0.7</org.energy-home.jemma.osgi.utils.version>
