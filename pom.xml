@@ -29,7 +29,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- Internal dependencies version properties -->
 		
-		<org.energy-home.jemma.osgi.utils.version>1.0.7</org.energy-home.jemma.osgi.utils.version>
+		<org.energy-home.jemma.osgi.utils.version>1.0.8</org.energy-home.jemma.osgi.utils.version>
 	
 		<!-- External dependencies version properties -->
 		<org.apache.commons.httpclient.version>3.1.0</org.apache.commons.httpclient.version>
