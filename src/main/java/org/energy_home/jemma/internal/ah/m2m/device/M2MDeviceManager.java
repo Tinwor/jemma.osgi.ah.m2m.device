@@ -15,7 +15,6 @@
  */
 package org.energy_home.jemma.internal.ah.m2m.device;
 
-
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -36,15 +35,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class M2MDeviceManager implements M2MDeviceConfigurator {
-	private static final Logger LOG = LoggerFactory.getLogger( M2MDeviceManager.class );
-	
+	private static final Logger LOG = LoggerFactory.getLogger(M2MDeviceManager.class);
+
 	private static M2MDeviceManager instance;
 	private static int referenceCounter = 0;
 
 	public synchronized static M2MDeviceManager get() {
-		if(instance==null)
-		{
-			instance= new M2MDeviceManager();
+		if (instance == null) {
+			instance = new M2MDeviceManager();
 		}
 		return instance;
 	}
@@ -142,13 +140,12 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 				connectionParams = (ConnectionParameters) jaxbConverterFactory.getObject(response.getEntity());
 				deviceConnectionParams.setRestarted(false);
 				// SclId is tied to device id
-				//deviceConfig.setNetworkSclBaseId(connectionParams.getId());
+				// deviceConfig.setNetworkSclBaseId(connectionParams.getId());
 				if (connectionParams.getToken() != null)
 					deviceConfig.setNetworkSclBaseToken(connectionParams.getToken());
 				deviceConfig.setNetworkSclBaseUri(connectionParams.getNwkSclBaseId());
 				networkSclManager.startup();
-				refreshNetworkConnectionUri = new URI(networkConnectionUri.toString() + M2MConstants.URL_SLASH
-						+ connectionParams.getId());
+				refreshNetworkConnectionUri = new URI(networkConnectionUri.toString() + M2MConstants.URL_SLASH + connectionParams.getId());
 				deviceStatus.setConnected(true);
 				notifyConnectionStatusToListeners();
 			} catch (Exception e) {
@@ -173,7 +170,7 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 			}
 		}
 	}
-	
+
 	private void notifyStartedStatusToListeners() {
 		synchronized (deviceStatus) {
 			if (listeners.size() > 0) {
@@ -181,7 +178,7 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 				// can be added
 				// or removed inside the networkSclConnected method
 				M2MDeviceListener[] listenersArray = new M2MDeviceListener[listeners.size()];
-				listeners.toArray(listenersArray);		
+				listeners.toArray(listenersArray);
 				if (deviceStatus.isValid())
 					for (int i = 0; i < listenersArray.length; i++) {
 						listenersArray[i].deviceStarted();
@@ -193,7 +190,7 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 			}
 		}
 	}
-	
+
 	private void notifyConfigUpdated() {
 		synchronized (deviceStatus) {
 			if (listeners.size() > 0) {
@@ -201,14 +198,14 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 				// can be added
 				// or removed inside the networkSclConnected method
 				M2MDeviceListener[] listenersArray = new M2MDeviceListener[listeners.size()];
-				listeners.toArray(listenersArray);		
+				listeners.toArray(listenersArray);
 				for (int i = 0; i < listenersArray.length; i++) {
 					listenersArray[i].deviceConfigUpdated();
 				}
 			}
 		}
 	}
-	
+
 	private void notifyConnectionStatusToListeners() {
 		synchronized (deviceStatus) {
 			if (listeners.size() > 0) {
@@ -216,7 +213,7 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 				// can be added
 				// or removed inside the networkSclConnected method
 				M2MDeviceListener[] listenersArray = new M2MDeviceListener[listeners.size()];
-				listeners.toArray(listenersArray);		
+				listeners.toArray(listenersArray);
 				if (deviceStatus.isConnected())
 					for (int i = 0; i < listenersArray.length; i++) {
 						listenersArray[i].networkSclConnected();
@@ -239,8 +236,7 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 				deviceConnectionParams.setTimeOffset(TimeZone.getDefault().getOffset(now));
 				response = restClient.put(refreshNetworkConnectionUri, jaxbConverterFactory.getEntity(deviceConnectionParams));
 				M2MUtils.checkHttpResponseStatus(response);
-				ConnectionParameters lastConnectionParams = (ConnectionParameters) jaxbConverterFactory.getObject(response
-						.getEntity());
+				ConnectionParameters lastConnectionParams = (ConnectionParameters) jaxbConverterFactory.getObject(response.getEntity());
 				if (keepAliveTimeout != lastConnectionParams.getKeepAliveTimeout()) {
 					connectionParams.setKeepAliveTimeout(lastConnectionParams.getKeepAliveTimeout());
 					return true;
@@ -341,8 +337,7 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 			LOG.debug("M2M Device connection has been established");
 			if (keepAliveTimeout > 0) {
 				LOG.debug("Periodic keep alive started " + keepAliveTimeout);
-				restClient.setCredential(refreshNetworkConnectionUri.getHost(), refreshNetworkConnectionUri.getPort(),
-						connectionParams.getId(), connectionParams.getToken());
+				restClient.setCredential(refreshNetworkConnectionUri.getHost(), refreshNetworkConnectionUri.getPort(), connectionParams.getId(), connectionParams.getToken());
 				scheduleKeepAliveTask(keepAliveTimeout, keepAliveTimeout);
 			} else {
 				LOG.debug("No keep alive requested " + keepAliveTimeout);
@@ -367,8 +362,7 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 		synchronized (deviceStatus) {
 			if (deviceStatus.isKeepAliveTaskScheduled()) {
 				try {
-					LOG.debug("M2M Connection keep alive task: isValid=" + deviceStatus.isValid() + ", isConnected="
-							+ deviceStatus.isConnected());
+					LOG.debug("M2M Connection keep alive task: isValid=" + deviceStatus.isValid() + ", isConnected=" + deviceStatus.isConnected());
 					boolean timeoutChanged = sendKeepAlive();
 					LOG.debug("M2M Device connection keepalive sent");
 					if (timeoutChanged) {
@@ -384,11 +378,11 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 					}
 				} catch (Exception e) {
 					LOG.error("M2M Device connection keep alive failed with exception", e);
-					// All error are currently managed by restarting the connection; a more restrictive test could be performed
+					// All error are currently managed by restarting the
+					// connection; a more restrictive test could be performed
 					// e.g. (e instanceof M2MUnauthorizedException)
 					cancelKeepAliveTask();
-					restClient.setCredential(networkConnectionUri.getHost(), networkConnectionUri.getPort(),
-							deviceConfig.getConnectionId(), deviceConfig.getConnectionToken());
+					restClient.setCredential(networkConnectionUri.getHost(), networkConnectionUri.getPort(), deviceConfig.getConnectionId(), deviceConfig.getConnectionToken());
 					long retryTimeout = deviceConfig.getConnectionRetryTimeout();
 					scheduleConnectTask(retryTimeout, retryTimeout);
 				}
@@ -399,26 +393,25 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 	private void startup() throws M2MServiceException {
 		synchronized (deviceStatus) {
 			LOG.debug("M2M Device startup requested: " + deviceConfig.getProperties());
-			
-			if (!deviceConfig.isLocalOnly()) {		
+
+			if (!deviceConfig.isLocalOnly()) {
 				if (!deviceConfig.isValid())
 					throw new M2MConfigException("Startup method failed: incomplete configuration");
-	
+
 				if (deviceStatus.isValid()) {
 					LOG.debug("M2M Device already started");
 					return;
 				}
 				jaxbConverterFactory = HttpEntityXmlConverter.getConnectionConverter();
 				try {
-					
+
 					restClient = RestClient.get();
-				
+
 					networkConnectionUri = new URI(deviceConfig.getConnectionBaseUri());
 				} catch (URISyntaxException e) {
 					M2MUtils.mapDeviceException(LOG, e, "Invalid base uri configuration");
 				}
-				restClient.setCredential(networkConnectionUri.getHost(), networkConnectionUri.getPort(),
-						deviceConfig.getConnectionId(), deviceConfig.getConnectionToken());
+				restClient.setCredential(networkConnectionUri.getHost(), networkConnectionUri.getPort(), deviceConfig.getConnectionId(), deviceConfig.getConnectionToken());
 			}
 			deviceStatus.setValid(true);
 			// First connection is scheduled so that OSGi framework startup is
@@ -426,11 +419,10 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 			notifyStartedStatusToListeners();
 			if (!deviceConfig.isLocalOnly()) {
 				scheduleConnectTask(100, deviceConfig.getConnectionRetryTimeout());
-				}
-			else {
+			} else {
 				LOG.debug("M2M Device local only configuration");
 			}
-			
+
 			LOG.debug("M2M Device startup completed");
 		}
 	}
@@ -479,8 +471,7 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 			deviceStatus.decrementActiveRequests();
 			if (newConnectionRequired && deviceStatus.isValid() && !deviceStatus.isConnectTaskScheduled()) {
 				cancelKeepAliveTask();
-				restClient.setCredential(networkConnectionUri.getHost(), networkConnectionUri.getPort(),
-						deviceConfig.getConnectionId(), deviceConfig.getConnectionToken());
+				restClient.setCredential(networkConnectionUri.getHost(), networkConnectionUri.getPort(), deviceConfig.getConnectionId(), deviceConfig.getConnectionToken());
 				long retryTimeout = deviceConfig.getConnectionRetryTimeout();
 				scheduleConnectTask(retryTimeout, retryTimeout);
 			}
@@ -572,8 +563,8 @@ public class M2MDeviceManager implements M2MDeviceConfigurator {
 			if (deviceStatus.isValid())
 				shutdown();
 			deviceConfig = M2MDeviceConfigObject.updateConfigProperties((M2MDeviceConfigObject) config);
-			networkSclManager.setDeviceConfig(deviceConfig);	
-			notifyConfigUpdated();		
+			networkSclManager.setDeviceConfig(deviceConfig);
+			notifyConfigUpdated();
 			if (config != null)
 				startup();
 		}

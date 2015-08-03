@@ -20,7 +20,6 @@
 // Generated on: 2012.06.05 at 12:25:32 PM CEST 
 //
 
-
 package org.energy_home.jemma.m2m.ah;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -28,11 +27,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for DoubleCDV complex type.
+ * <p>
+ * Java class for DoubleCDV complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="DoubleCDV">
@@ -50,65 +51,54 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DoubleCDV", propOrder = {
-    "min",
-    "max"
-})
-public class DoubleCDV
-    extends DoubleDV
-{
+@XmlType(name = "DoubleCDV", propOrder = { "min", "max" })
+public class DoubleCDV extends DoubleDV {
 
-    @XmlElement(name = "Min")
-    protected Double min;
-    @XmlElement(name = "Max")
-    protected Double max;
+	@XmlElement(name = "Min")
+	protected Double min;
+	@XmlElement(name = "Max")
+	protected Double max;
 
-    /**
-     * Gets the value of the min property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getMin() {
-        return min;
-    }
+	/**
+	 * Gets the value of the min property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getMin() {
+		return min;
+	}
 
-    /**
-     * Sets the value of the min property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setMin(Double value) {
-        this.min = value;
-    }
+	/**
+	 * Sets the value of the min property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setMin(Double value) {
+		this.min = value;
+	}
 
-    /**
-     * Gets the value of the max property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getMax() {
-        return max;
-    }
+	/**
+	 * Gets the value of the max property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getMax() {
+		return max;
+	}
 
-    /**
-     * Sets the value of the max property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setMax(Double value) {
-        this.max = value;
-    }
+	/**
+	 * Sets the value of the max property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setMax(Double value) {
+		this.max = value;
+	}
 
 }

@@ -20,7 +20,6 @@
 // Generated on: 2012.06.05 at 12:25:32 PM CEST 
 //
 
-
 package org.energy_home.jemma.m2m.ah;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -28,11 +27,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for FloatCDV complex type.
+ * <p>
+ * Java class for FloatCDV complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="FloatCDV">
@@ -50,65 +51,54 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FloatCDV", propOrder = {
-    "min",
-    "max"
-})
-public class FloatCDV
-    extends FloatDV
-{
+@XmlType(name = "FloatCDV", propOrder = { "min", "max" })
+public class FloatCDV extends FloatDV {
 
-    @XmlElement(name = "Min")
-    protected Float min;
-    @XmlElement(name = "Max")
-    protected Float max;
+	@XmlElement(name = "Min")
+	protected Float min;
+	@XmlElement(name = "Max")
+	protected Float max;
 
-    /**
-     * Gets the value of the min property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Float }
-     *     
-     */
-    public Float getMin() {
-        return min;
-    }
+	/**
+	 * Gets the value of the min property.
+	 * 
+	 * @return possible object is {@link Float }
+	 * 
+	 */
+	public Float getMin() {
+		return min;
+	}
 
-    /**
-     * Sets the value of the min property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Float }
-     *     
-     */
-    public void setMin(Float value) {
-        this.min = value;
-    }
+	/**
+	 * Sets the value of the min property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Float }
+	 * 
+	 */
+	public void setMin(Float value) {
+		this.min = value;
+	}
 
-    /**
-     * Gets the value of the max property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Float }
-     *     
-     */
-    public Float getMax() {
-        return max;
-    }
+	/**
+	 * Gets the value of the max property.
+	 * 
+	 * @return possible object is {@link Float }
+	 * 
+	 */
+	public Float getMax() {
+		return max;
+	}
 
-    /**
-     * Sets the value of the max property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Float }
-     *     
-     */
-    public void setMax(Float value) {
-        this.max = value;
-    }
+	/**
+	 * Sets the value of the max property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Float }
+	 * 
+	 */
+	public void setMax(Float value) {
+		this.max = value;
+	}
 
 }

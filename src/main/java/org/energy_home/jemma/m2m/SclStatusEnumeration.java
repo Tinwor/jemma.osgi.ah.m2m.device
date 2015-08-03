@@ -5,19 +5,21 @@
 // Generated on: 2014.12.10 at 10:38:31 AM CET 
 //
 
-
 package org.energy_home.jemma.m2m;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for SclStatusEnumeration.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
+ * Java class for SclStatusEnumeration.
+ * 
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
+ * <p>
+ * 
  * <pre>
  * &lt;simpleType name="SclStatusEnumeration">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
@@ -33,29 +35,27 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum SclStatusEnumeration {
 
-    @XmlEnumValue("Online")
-    ONLINE("Online"),
-    @XmlEnumValue("Offline")
-    OFFLINE("Offline"),
-    @XmlEnumValue("Disconnected")
-    DISCONNECTED("Disconnected");
-    private final String value;
+	@XmlEnumValue("Online")
+	ONLINE("Online"), @XmlEnumValue("Offline")
+	OFFLINE("Offline"), @XmlEnumValue("Disconnected")
+	DISCONNECTED("Disconnected");
+	private final String value;
 
-    SclStatusEnumeration(String v) {
-        value = v;
-    }
+	SclStatusEnumeration(String v) {
+		value = v;
+	}
 
-    public String value() {
-        return value;
-    }
+	public String value() {
+		return value;
+	}
 
-    public static SclStatusEnumeration fromValue(String v) {
-        for (SclStatusEnumeration c: SclStatusEnumeration.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
+	public static SclStatusEnumeration fromValue(String v) {
+		for (SclStatusEnumeration c : SclStatusEnumeration.values()) {
+			if (c.value.equals(v)) {
+				return c;
+			}
+		}
+		throw new IllegalArgumentException(v);
+	}
 
 }

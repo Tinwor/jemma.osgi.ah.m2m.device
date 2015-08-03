@@ -5,7 +5,6 @@
 // Generated on: 2014.12.10 at 10:38:31 AM CET 
 //
 
-
 package org.energy_home.jemma.m2m;
 
 import java.util.ArrayList;
@@ -17,11 +16,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for ContentInstanceItemsStatus complex type.
+ * <p>
+ * Java class for ContentInstanceItemsStatus complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="ContentInstanceItemsStatus">
@@ -39,72 +40,67 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ContentInstanceItemsStatus", propOrder = {
-    "contentInstanceItemStatuses"
-})
-public class ContentInstanceItemsStatus
-    extends M2MXmlObject
-{
+@XmlType(name = "ContentInstanceItemsStatus", propOrder = { "contentInstanceItemStatuses" })
+public class ContentInstanceItemsStatus extends M2MXmlObject {
 
-    @XmlElement(name = "ContentInstanceItemStatus")
-    protected List<ContentInstanceItemStatus> contentInstanceItemStatuses;
-    @XmlAttribute(name = "AddressedId")
-    @XmlSchemaType(name = "anyURI")
-    protected String addressedId;
+	@XmlElement(name = "ContentInstanceItemStatus")
+	protected List<ContentInstanceItemStatus> contentInstanceItemStatuses;
+	@XmlAttribute(name = "AddressedId")
+	@XmlSchemaType(name = "anyURI")
+	protected String addressedId;
 
-    /**
-     * Gets the value of the contentInstanceItemStatuses property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the contentInstanceItemStatuses property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getContentInstanceItemStatuses().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ContentInstanceItemStatus }
-     * 
-     * 
-     */
-    public List<ContentInstanceItemStatus> getContentInstanceItemStatuses() {
-        if (contentInstanceItemStatuses == null) {
-            contentInstanceItemStatuses = new ArrayList<ContentInstanceItemStatus>();
-        }
-        return this.contentInstanceItemStatuses;
-    }
+	/**
+	 * Gets the value of the contentInstanceItemStatuses property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the contentInstanceItemStatuses property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getContentInstanceItemStatuses().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link ContentInstanceItemStatus }
+	 * 
+	 * 
+	 */
+	public List<ContentInstanceItemStatus> getContentInstanceItemStatuses() {
+		if (contentInstanceItemStatuses == null) {
+			contentInstanceItemStatuses = new ArrayList<ContentInstanceItemStatus>();
+		}
+		return this.contentInstanceItemStatuses;
+	}
 
-    /**
-     * 
-     * The addressedId property is used to define the scope of contained resources id property
-     *                         
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAddressedId() {
-        return addressedId;
-    }
+	/**
+	 * 
+	 * The addressedId property is used to define the scope of contained
+	 * resources id property
+	 * 
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getAddressedId() {
+		return addressedId;
+	}
 
-    /**
-     * Sets the value of the addressedId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAddressedId(String value) {
-        this.addressedId = value;
-    }
+	/**
+	 * Sets the value of the addressedId property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setAddressedId(String value) {
+		this.addressedId = value;
+	}
 
 }

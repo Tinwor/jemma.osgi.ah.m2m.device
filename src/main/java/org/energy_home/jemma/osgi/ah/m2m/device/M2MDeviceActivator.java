@@ -32,7 +32,7 @@ import org.slf4j.LoggerFactory;
 
 public class M2MDeviceActivator implements M2MDeviceListener, BundleActivator, ServiceFactory {
 
-	private static final Logger LOG = LoggerFactory.getLogger( M2MDeviceActivator.class );
+	private static final Logger LOG = LoggerFactory.getLogger(M2MDeviceActivator.class);
 
 	private BundleContext bc;
 	private M2MDeviceObject device;
@@ -44,10 +44,10 @@ public class M2MDeviceActivator implements M2MDeviceListener, BundleActivator, S
 	public void start(BundleContext bc) throws Exception {
 		this.bc = bc;
 		device = new M2MDeviceObject();
-		
+
 		Hashtable props = new Hashtable();
 		props.put("osgi.command.scope", "m2m");
-		
+
 		M2MCommandProvider commandProvider = new M2MCommandProvider(device);
 		deviceConfiguratorRegistration = bc.registerService(M2MDeviceConfigurator.class.getName(), device, null);
 		commandProviderRegistration = bc.registerService(CommandProvider.class.getName(), commandProvider, props);
@@ -94,21 +94,21 @@ public class M2MDeviceActivator implements M2MDeviceListener, BundleActivator, S
 	}
 
 	public void deviceStarted() {
-		LOG.debug("M2M Device started");	
+		LOG.debug("M2M Device started");
 	}
-	
+
 	public void deviceStopped() {
-		LOG.debug("M2M Device staopped");	
+		LOG.debug("M2M Device staopped");
 	}
-	
+
 	public void deviceConfigUpdated() {
-		LOG.debug("Device config updated");	
+		LOG.debug("Device config updated");
 	}
-	
+
 	public void localSclIdUpdated() {
 		LOG.debug("M2M Device local scl id updated");
 	}
-	
+
 	public Object getService(Bundle bundle, ServiceRegistration registration) {
 		String bundleName = bundle.getSymbolicName();
 		LOG.debug("Created Network Scl service for bundle " + bundleName);

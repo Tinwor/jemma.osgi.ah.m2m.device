@@ -55,7 +55,7 @@ public class M2MDeviceObject implements M2MDeviceConfigurator {
 	public String getSclId() {
 		return deviceObject.getConfiguration().getSclId();
 	}
-	
+
 	public M2MNetworkScl getNetworkScl(String user) {
 		return new M2MNetworkSclObject(deviceObject.getNetworkSclManager(), user);
 	}
@@ -72,7 +72,5 @@ public class M2MDeviceObject implements M2MDeviceConfigurator {
 		setListener(null);
 		deviceObject.removeReference();
 	}
-
-
 
 }

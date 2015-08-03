@@ -5,7 +5,6 @@
 // Generated on: 2014.12.10 at 10:38:31 AM CET 
 //
 
-
 package org.energy_home.jemma.m2m;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -15,11 +14,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -39,211 +40,181 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "id",
-    "accessRightId",
-    "creationTime",
-    "lastModifiedTime",
-    "sclBaseId",
-    "onLineStatus",
-    "expirationTime"
-})
+@XmlType(name = "", propOrder = { "id", "accessRightId", "creationTime", "lastModifiedTime", "sclBaseId", "onLineStatus", "expirationTime" })
 @XmlRootElement(name = "Scl")
-public class Scl
-    extends M2MXmlObject
-{
+public class Scl extends M2MXmlObject {
 
-    @XmlElement(name = "Id")
-    @XmlSchemaType(name = "anyURI")
-    protected String id;
-    @XmlElement(name = "AccessRightId")
-    @XmlSchemaType(name = "anyURI")
-    protected String accessRightId;
-    @XmlElement(name = "CreationTime")
-    protected Long creationTime;
-    @XmlElement(name = "LastModifiedTime")
-    protected Long lastModifiedTime;
-    @XmlElement(name = "SclBaseId")
-    @XmlSchemaType(name = "anyURI")
-    protected String sclBaseId;
-    @XmlElement(name = "OnLineStatus")
-    protected SclStatusEnumeration onLineStatus;
-    @XmlElement(name = "ExpirationTime")
-    protected Long expirationTime;
+	@XmlElement(name = "Id")
+	@XmlSchemaType(name = "anyURI")
+	protected String id;
+	@XmlElement(name = "AccessRightId")
+	@XmlSchemaType(name = "anyURI")
+	protected String accessRightId;
+	@XmlElement(name = "CreationTime")
+	protected Long creationTime;
+	@XmlElement(name = "LastModifiedTime")
+	protected Long lastModifiedTime;
+	@XmlElement(name = "SclBaseId")
+	@XmlSchemaType(name = "anyURI")
+	protected String sclBaseId;
+	@XmlElement(name = "OnLineStatus")
+	protected SclStatusEnumeration onLineStatus;
+	@XmlElement(name = "ExpirationTime")
+	protected Long expirationTime;
 
-    /**
-     * 
-     * The id property is a unique identifier of the resource related to the containing 
-     * resource identifier specified by the the context of the HTTP Request or by a parent 
-     * element.
-     *                             
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getId() {
-        return id;
-    }
+	/**
+	 * 
+	 * The id property is a unique identifier of the resource related to the
+	 * containing resource identifier specified by the the context of the HTTP
+	 * Request or by a parent element.
+	 * 
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getId() {
+		return id;
+	}
 
-    /**
-     * Sets the value of the id property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setId(String value) {
-        this.id = value;
-    }
+	/**
+	 * Sets the value of the id property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setId(String value) {
+		this.id = value;
+	}
 
-    /**
-     * Gets the value of the accessRightId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAccessRightId() {
-        return accessRightId;
-    }
+	/**
+	 * Gets the value of the accessRightId property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getAccessRightId() {
+		return accessRightId;
+	}
 
-    /**
-     * Sets the value of the accessRightId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAccessRightId(String value) {
-        this.accessRightId = value;
-    }
+	/**
+	 * Sets the value of the accessRightId property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setAccessRightId(String value) {
+		this.accessRightId = value;
+	}
 
-    /**
-     *                           
-     *     The CreationTime property specifies the time Time of creation of the resource as UTC 
-     *     milliseconds from the Epoch (January 1, 1970 00:00:00.000 GMT)  
-     *                             
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getCreationTime() {
-        return creationTime;
-    }
+	/**
+	 * 
+	 * The CreationTime property specifies the time Time of creation of the
+	 * resource as UTC milliseconds from the Epoch (January 1, 1970 00:00:00.000
+	 * GMT)
+	 * 
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getCreationTime() {
+		return creationTime;
+	}
 
-    /**
-     * Sets the value of the creationTime property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setCreationTime(Long value) {
-        this.creationTime = value;
-    }
+	/**
+	 * Sets the value of the creationTime property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setCreationTime(Long value) {
+		this.creationTime = value;
+	}
 
-    /**
-     * Gets the value of the lastModifiedTime property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getLastModifiedTime() {
-        return lastModifiedTime;
-    }
+	/**
+	 * Gets the value of the lastModifiedTime property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getLastModifiedTime() {
+		return lastModifiedTime;
+	}
 
-    /**
-     * Sets the value of the lastModifiedTime property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setLastModifiedTime(Long value) {
-        this.lastModifiedTime = value;
-    }
+	/**
+	 * Sets the value of the lastModifiedTime property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setLastModifiedTime(Long value) {
+		this.lastModifiedTime = value;
+	}
 
-    /**
-     * Gets the value of the sclBaseId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSclBaseId() {
-        return sclBaseId;
-    }
+	/**
+	 * Gets the value of the sclBaseId property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getSclBaseId() {
+		return sclBaseId;
+	}
 
-    /**
-     * Sets the value of the sclBaseId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSclBaseId(String value) {
-        this.sclBaseId = value;
-    }
+	/**
+	 * Sets the value of the sclBaseId property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setSclBaseId(String value) {
+		this.sclBaseId = value;
+	}
 
-    /**
-     * Gets the value of the onLineStatus property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link SclStatusEnumeration }
-     *     
-     */
-    public SclStatusEnumeration getOnLineStatus() {
-        return onLineStatus;
-    }
+	/**
+	 * Gets the value of the onLineStatus property.
+	 * 
+	 * @return possible object is {@link SclStatusEnumeration }
+	 * 
+	 */
+	public SclStatusEnumeration getOnLineStatus() {
+		return onLineStatus;
+	}
 
-    /**
-     * Sets the value of the onLineStatus property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SclStatusEnumeration }
-     *     
-     */
-    public void setOnLineStatus(SclStatusEnumeration value) {
-        this.onLineStatus = value;
-    }
+	/**
+	 * Sets the value of the onLineStatus property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link SclStatusEnumeration }
+	 * 
+	 */
+	public void setOnLineStatus(SclStatusEnumeration value) {
+		this.onLineStatus = value;
+	}
 
-    /**
-     * Gets the value of the expirationTime property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getExpirationTime() {
-        return expirationTime;
-    }
+	/**
+	 * Gets the value of the expirationTime property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getExpirationTime() {
+		return expirationTime;
+	}
 
-    /**
-     * Sets the value of the expirationTime property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setExpirationTime(Long value) {
-        this.expirationTime = value;
-    }
+	/**
+	 * Sets the value of the expirationTime property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setExpirationTime(Long value) {
+		this.expirationTime = value;
+	}
 
 }

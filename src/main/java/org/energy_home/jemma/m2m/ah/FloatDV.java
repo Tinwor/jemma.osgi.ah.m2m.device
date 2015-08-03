@@ -20,7 +20,6 @@
 // Generated on: 2012.06.05 at 12:25:32 PM CEST 
 //
 
-
 package org.energy_home.jemma.m2m.ah;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -29,11 +28,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for FloatDV complex type.
+ * <p>
+ * Java class for FloatDV complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="FloatDV">
@@ -51,58 +52,50 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FloatDV", propOrder = {
-    "value",
-    "duration"
-})
-@XmlSeeAlso({
-    FloatCDV.class
-})
+@XmlType(name = "FloatDV", propOrder = { "value", "duration" })
+@XmlSeeAlso({ FloatCDV.class })
 public class FloatDV {
 
-    @XmlElement(name = "Value")
-    protected Float value;
-    @XmlElement(name = "Duration")
-    protected long duration;
+	@XmlElement(name = "Value")
+	protected Float value;
+	@XmlElement(name = "Duration")
+	protected long duration;
 
-    /**
-     * Gets the value of the value property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Float }
-     *     
-     */
-    public Float getValue() {
-        return value;
-    }
+	/**
+	 * Gets the value of the value property.
+	 * 
+	 * @return possible object is {@link Float }
+	 * 
+	 */
+	public Float getValue() {
+		return value;
+	}
 
-    /**
-     * Sets the value of the value property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Float }
-     *     
-     */
-    public void setValue(Float value) {
-        this.value = value;
-    }
+	/**
+	 * Sets the value of the value property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Float }
+	 * 
+	 */
+	public void setValue(Float value) {
+		this.value = value;
+	}
 
-    /**
-     * Gets the value of the duration property.
-     * 
-     */
-    public long getDuration() {
-        return duration;
-    }
+	/**
+	 * Gets the value of the duration property.
+	 * 
+	 */
+	public long getDuration() {
+		return duration;
+	}
 
-    /**
-     * Sets the value of the duration property.
-     * 
-     */
-    public void setDuration(long value) {
-        this.duration = value;
-    }
+	/**
+	 * Sets the value of the duration property.
+	 * 
+	 */
+	public void setDuration(long value) {
+		this.duration = value;
+	}
 
 }

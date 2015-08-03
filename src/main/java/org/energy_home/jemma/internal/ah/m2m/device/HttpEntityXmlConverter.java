@@ -32,7 +32,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class HttpEntityXmlConverter extends XmlConverter {
-	private static final Logger LOG = LoggerFactory.getLogger( HttpEntityXmlConverter.class );
+	private static final Logger LOG = LoggerFactory.getLogger(HttpEntityXmlConverter.class);
 
 	private static HttpEntityXmlConverter connectionInstance;
 	private static HttpEntityXmlConverter coreInstance;
@@ -41,21 +41,19 @@ public class HttpEntityXmlConverter extends XmlConverter {
 
 	public synchronized static HttpEntityXmlConverter getConnectionConverter() {
 		if (connectionInstance == null)
-			connectionInstance = new HttpEntityXmlConverter(M2MXmlConverter.JAXB_CONNECTION_CONTEXT_PATH,
-					M2MXmlConverter.JAXB_CONNECTION_NAMESPACE, null, 1);
+			connectionInstance = new HttpEntityXmlConverter(M2MXmlConverter.JAXB_CONNECTION_CONTEXT_PATH, M2MXmlConverter.JAXB_CONNECTION_NAMESPACE, null, 1);
 		return connectionInstance;
 	}
 
 	public synchronized static HttpEntityXmlConverter getCoreConverter() {
 		if (coreInstance == null) {
-			coreInstance = new HttpEntityXmlConverter(M2MXmlConverter.JAXB_CORE_CONTEXT_PATH, M2MXmlConverter.JAXB_CORE_NAMESPACE,  
+			coreInstance = new HttpEntityXmlConverter(M2MXmlConverter.JAXB_CORE_CONTEXT_PATH, M2MXmlConverter.JAXB_CORE_NAMESPACE,
 					M2MXmlConverter.JAXB_CORE_NAMESPACES_PREFERRED_PREFIX_MAP, 1);
 		}
 		return coreInstance;
 	}
 
-	protected HttpEntityXmlConverter(String contextPath, String defaultNamespace, Map<String, String> nameSpacePreferredPrefixMap,
-			int poolMaxSize) {
+	protected HttpEntityXmlConverter(String contextPath, String defaultNamespace, Map<String, String> nameSpacePreferredPrefixMap, int poolMaxSize) {
 		super(contextPath, defaultNamespace, nameSpacePreferredPrefixMap, poolMaxSize);
 	}
 
@@ -66,7 +64,7 @@ public class HttpEntityXmlConverter extends XmlConverter {
 
 	public Object getObject(HttpEntity entity) throws JAXBException, IllegalStateException, IOException {
 		Object o = readObject(entity.getContent());
-		//FIXME LOG.isDebugEnabled ... shall we avoid this ?
+		// FIXME LOG.isDebugEnabled ... shall we avoid this ?
 		if (LOG.isDebugEnabled())
 			LOG.debug("toObject:\n" + getPrintableString(o));
 		return o;

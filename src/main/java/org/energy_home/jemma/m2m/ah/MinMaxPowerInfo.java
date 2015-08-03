@@ -24,14 +24,10 @@ import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PowerInfo", propOrder = {
-    "minPower",
-    "minPowerTime",
-    "maxPower",
-    "maxPowerTime"})
+@XmlType(name = "PowerInfo", propOrder = { "minPower", "minPowerTime", "maxPower", "maxPowerTime" })
 public class MinMaxPowerInfo implements Serializable {
 	private static final long serialVersionUID = 2254228193422737520L;
-	
+
 	@XmlElement(name = "MinPower")
 	volatile float minPower;
 	@XmlElement(name = "MinPowerTime")
@@ -40,16 +36,16 @@ public class MinMaxPowerInfo implements Serializable {
 	volatile float maxPower;
 	@XmlElement(name = "MaxPowerTime")
 	volatile long maxPowerTime;
-	
+
 	@XmlTransient
 	volatile float currentPower;
 	@XmlTransient
 	volatile long currentTime;
-	
+
 	public MinMaxPowerInfo() {
 		reset();
 	}
-	
+
 	public MinMaxPowerInfo(MinMaxPowerInfo other) {
 		currentPower = other.currentPower;
 		currentTime = other.currentTime;
@@ -58,42 +54,51 @@ public class MinMaxPowerInfo implements Serializable {
 		maxPower = other.maxPower;
 		maxPowerTime = other.maxPowerTime;
 	}
-	
+
 	public float getCurrentPower() {
 		return currentPower;
 	}
+
 	public long getCurrentPowerTime() {
 		return currentTime;
 	}
+
 	public float getMinPower() {
 		return minPower;
 	}
+
 	public void setMinPower(float power) {
 		minPower = power;
 	}
+
 	public long getMinPowerTime() {
 		return minPowerTime;
 	}
+
 	public void setMinPowerTime(long time) {
 		minPowerTime = time;
 		if (currentTime < minPowerTime)
 			currentTime = minPowerTime;
 	}
+
 	public float getMaxPower() {
 		return maxPower;
 	}
+
 	public void setMaxPower(float power) {
 		maxPower = power;
 	}
+
 	public long getMaxPowerTime() {
 		return maxPowerTime;
 	}
+
 	public void setMaxPowerTime(long time) {
 		maxPowerTime = time;
 		if (currentTime < maxPowerTime)
 			currentTime = maxPowerTime;
 	}
-	
+
 	public void setCurrentPower(float power, long time) {
 		currentPower = power;
 		currentTime = time;
@@ -106,17 +111,17 @@ public class MinMaxPowerInfo implements Serializable {
 			minPowerTime = time;
 		}
 	}
-	
+
 	public boolean isValid() {
 		return maxPower >= minPower;
 	}
-	
+
 	public void reset() {
 		minPowerTime = maxPowerTime = 0;
 		minPower = Float.POSITIVE_INFINITY;
 		maxPower = -1;
 	}
-	
+
 	public String toString() {
 		StringBuilder sb = new StringBuilder("current power = ").append(currentPower);
 		sb.append("\ncurrent power time = ").append(currentTime);

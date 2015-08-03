@@ -15,14 +15,13 @@
  */
 package org.energy_home.jemma.ah.m2m.device.lib;
 
-
 public interface M2MDeviceListener {
 	public void deviceStarted();
-	
+
 	public void deviceStopped();
-	
+
 	public void deviceConfigUpdated();
-	
+
 	public void networkSclConnected();
 
 	public void networkSclDisconnected();

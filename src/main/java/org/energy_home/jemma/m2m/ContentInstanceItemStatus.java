@@ -5,7 +5,6 @@
 // Generated on: 2014.12.10 at 10:38:31 AM CET 
 //
 
-
 package org.energy_home.jemma.m2m;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for ContentInstanceItemStatus complex type.
+ * <p>
+ * Java class for ContentInstanceItemStatus complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="ContentInstanceItemStatus">
@@ -33,53 +34,48 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ContentInstanceItemStatus")
-public class ContentInstanceItemStatus
-    extends M2MXmlObject
-{
+public class ContentInstanceItemStatus extends M2MXmlObject {
 
-    @XmlAttribute(name = "BatchStatus", required = true)
-    protected int batchStatus;
-    @XmlAttribute(name = "ResourceId")
-    protected Long resourceId;
+	@XmlAttribute(name = "BatchStatus", required = true)
+	protected int batchStatus;
+	@XmlAttribute(name = "ResourceId")
+	protected Long resourceId;
 
-    /**
-     * Gets the value of the batchStatus property.
-     * 
-     */
-    public int getBatchStatus() {
-        return batchStatus;
-    }
+	/**
+	 * Gets the value of the batchStatus property.
+	 * 
+	 */
+	public int getBatchStatus() {
+		return batchStatus;
+	}
 
-    /**
-     * Sets the value of the batchStatus property.
-     * 
-     */
-    public void setBatchStatus(int value) {
-        this.batchStatus = value;
-    }
+	/**
+	 * Sets the value of the batchStatus property.
+	 * 
+	 */
+	public void setBatchStatus(int value) {
+		this.batchStatus = value;
+	}
 
-    /**
-     * Gets the value of the resourceId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getResourceId() {
-        return resourceId;
-    }
+	/**
+	 * Gets the value of the resourceId property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getResourceId() {
+		return resourceId;
+	}
 
-    /**
-     * Sets the value of the resourceId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setResourceId(Long value) {
-        this.resourceId = value;
-    }
+	/**
+	 * Sets the value of the resourceId property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setResourceId(Long value) {
+		this.resourceId = value;
+	}
 
 }

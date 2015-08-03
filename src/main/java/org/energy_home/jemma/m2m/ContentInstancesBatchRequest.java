@@ -5,7 +5,6 @@
 // Generated on: 2014.12.10 at 10:38:31 AM CET 
 //
 
-
 package org.energy_home.jemma.m2m;
 
 import java.util.ArrayList;
@@ -17,11 +16,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -39,65 +40,63 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "contentInstanceItems"
-})
+@XmlType(name = "", propOrder = { "contentInstanceItems" })
 @XmlRootElement(name = "ContentInstancesBatchRequest")
-public class ContentInstancesBatchRequest
-    extends M2MXmlObject
-{
+public class ContentInstancesBatchRequest extends M2MXmlObject {
 
-    @XmlElement(name = "ContentInstanceItems")
-    protected List<ContentInstanceItems> contentInstanceItems;
-    @XmlAttribute(name = "Timestamp", required = true)
-    protected long timestamp;
+	@XmlElement(name = "ContentInstanceItems")
+	protected List<ContentInstanceItems> contentInstanceItems;
+	@XmlAttribute(name = "Timestamp", required = true)
+	protected long timestamp;
 
-    /**
-     * Gets the value of the contentInstanceItems property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the contentInstanceItems property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getContentInstanceItems().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ContentInstanceItems }
-     * 
-     * 
-     */
-    public List<ContentInstanceItems> getContentInstanceItems() {
-        if (contentInstanceItems == null) {
-            contentInstanceItems = new ArrayList<ContentInstanceItems>();
-        }
-        return this.contentInstanceItems;
-    }
+	/**
+	 * Gets the value of the contentInstanceItems property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the contentInstanceItems property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getContentInstanceItems().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link ContentInstanceItems }
+	 * 
+	 * 
+	 */
+	public List<ContentInstanceItems> getContentInstanceItems() {
+		if (contentInstanceItems == null) {
+			contentInstanceItems = new ArrayList<ContentInstanceItems>();
+		}
+		return this.contentInstanceItems;
+	}
 
-    /**
-     *                           
-     * The Timestamp property specifies the time of the first attempt to send the ContentInstancesBatchRequest as UTC 
-     * milliseconds from the Epoch (January 1, 1970 00:00:00.000 GMT)  
-     *                         
-     * 
-     */
-    public long getTimestamp() {
-        return timestamp;
-    }
+	/**
+	 * 
+	 * The Timestamp property specifies the time of the first attempt to send
+	 * the ContentInstancesBatchRequest as UTC milliseconds from the Epoch
+	 * (January 1, 1970 00:00:00.000 GMT)
+	 * 
+	 * 
+	 */
+	public long getTimestamp() {
+		return timestamp;
+	}
 
-    /**
-     * Sets the value of the timestamp property.
-     * 
-     */
-    public void setTimestamp(long value) {
-        this.timestamp = value;
-    }
+	/**
+	 * Sets the value of the timestamp property.
+	 * 
+	 */
+	public void setTimestamp(long value) {
+		this.timestamp = value;
+	}
 
 }

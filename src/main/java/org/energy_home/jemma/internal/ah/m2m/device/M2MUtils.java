@@ -24,8 +24,9 @@ import org.energy_home.jemma.utils.rest.RestClient;
 
 //
 class M2MUtils {
-	
-	//FIXME this pattern to be checked carefully and documented: it seems legit - but it's risky - Why am I passing logger to this function ?
+
+	// FIXME this pattern to be checked carefully and documented: it seems legit
+	// - but it's risky - Why am I passing logger to this function ?
 	static void mapDeviceException(Logger log, Exception e, String msg) throws M2MServiceException {
 		log.error("M2MServiceException: " + msg + " - " + e.getClass().getName());
 		if (log.isDebugEnabled())
@@ -38,8 +39,7 @@ class M2MUtils {
 
 	static void checkHttpResponseStatus(HttpResponse response) throws M2MHttpStatusException {
 		if (RestClient.isUnauthorized(response))
-			throw new M2MUnauthorizedException("Unauthorized exception in http response, status "
-					+ RestClient.getResponseStatus(response));
+			throw new M2MUnauthorizedException("Unauthorized exception in http response, status " + RestClient.getResponseStatus(response));
 		else if (!RestClient.isOkOrCreatedStatus(response)) {
 			throw new M2MHttpStatusException("Exception in http response, status " + RestClient.getResponseStatus(response));
 		}

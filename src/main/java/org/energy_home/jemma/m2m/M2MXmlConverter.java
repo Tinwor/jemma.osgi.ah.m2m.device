@@ -33,7 +33,7 @@ public class M2MXmlConverter extends XmlConverter {
 	public static String JAXB_CORE_CONTEXT_PATH = "org.energy_home.jemma.m2m";
 
 	public static Map<String, String> JAXB_CORE_NAMESPACES_PREFERRED_PREFIX_MAP;
-	
+
 	static {
 		JAXB_CORE_NAMESPACES_PREFERRED_PREFIX_MAP = new HashMap<String, String>();
 		JAXB_CORE_NAMESPACES_PREFERRED_PREFIX_MAP.put(XmlConverter.XML_SCHEMA_INSTANCE_NAMESPACE, "xsi");
@@ -43,26 +43,24 @@ public class M2MXmlConverter extends XmlConverter {
 			Class clazz = Class.forName("org.energy_home.jemma.m2m.ah.ObjectFactory");
 			JAXB_CORE_CONTEXT_PATH += ":org.energy_home.jemma.m2m.ah";
 			JAXB_CORE_NAMESPACES_PREFERRED_PREFIX_MAP.put("http://schemas.telecomitalia.it/ah", "ah");
-		} catch (Exception e) {}
-	}	
-	
+		} catch (Exception e) {
+		}
+	}
+
 	public synchronized static M2MXmlConverter getConnectionConverter() {
 		if (connectionInstance == null)
-			connectionInstance = new M2MXmlConverter(JAXB_CONNECTION_CONTEXT_PATH,
-					JAXB_CONNECTION_NAMESPACE, null, 1);
+			connectionInstance = new M2MXmlConverter(JAXB_CONNECTION_CONTEXT_PATH, JAXB_CONNECTION_NAMESPACE, null, 1);
 		return connectionInstance;
 	}
 
 	public synchronized static M2MXmlConverter getCoreConverter() {
 		if (coreInstance == null) {
-			coreInstance = new M2MXmlConverter(JAXB_CORE_CONTEXT_PATH, JAXB_CORE_NAMESPACE, 
-					JAXB_CORE_NAMESPACES_PREFERRED_PREFIX_MAP,1);
+			coreInstance = new M2MXmlConverter(JAXB_CORE_CONTEXT_PATH, JAXB_CORE_NAMESPACE, JAXB_CORE_NAMESPACES_PREFERRED_PREFIX_MAP, 1);
 		}
 		return coreInstance;
 	}
 
-	protected M2MXmlConverter(String contextPath, String defaultNamespace, Map<String, String> nameSpacePreferredPrefixMap,
-			int poolMaxSize) {
+	protected M2MXmlConverter(String contextPath, String defaultNamespace, Map<String, String> nameSpacePreferredPrefixMap, int poolMaxSize) {
 		super(contextPath, defaultNamespace, nameSpacePreferredPrefixMap, poolMaxSize);
 	}
 

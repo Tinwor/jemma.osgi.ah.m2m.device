@@ -7,3 +7,4 @@
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://schemas.telecomitalia.it/m2m", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
 package org.energy_home.jemma.m2m;
+

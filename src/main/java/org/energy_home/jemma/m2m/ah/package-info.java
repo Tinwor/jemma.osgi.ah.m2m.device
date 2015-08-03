@@ -22,3 +22,4 @@
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://schemas.telecomitalia.it/ah", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
 package org.energy_home.jemma.m2m.ah;
+

@@ -5,7 +5,6 @@
 // Generated on: 2014.12.10 at 10:38:31 AM CET 
 //
 
-
 package org.energy_home.jemma.m2m;
 
 import java.util.ArrayList;
@@ -16,11 +15,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -37,44 +38,41 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "contentInstanceItemsStatuses"
-})
+@XmlType(name = "", propOrder = { "contentInstanceItemsStatuses" })
 @XmlRootElement(name = "ContentInstancesBatchResponse")
-public class ContentInstancesBatchResponse
-    extends M2MXmlObject
-{
+public class ContentInstancesBatchResponse extends M2MXmlObject {
 
-    @XmlElement(name = "ContentInstanceItemsStatus")
-    protected List<ContentInstanceItemsStatus> contentInstanceItemsStatuses;
+	@XmlElement(name = "ContentInstanceItemsStatus")
+	protected List<ContentInstanceItemsStatus> contentInstanceItemsStatuses;
 
-    /**
-     * Gets the value of the contentInstanceItemsStatuses property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the contentInstanceItemsStatuses property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getContentInstanceItemsStatuses().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ContentInstanceItemsStatus }
-     * 
-     * 
-     */
-    public List<ContentInstanceItemsStatus> getContentInstanceItemsStatuses() {
-        if (contentInstanceItemsStatuses == null) {
-            contentInstanceItemsStatuses = new ArrayList<ContentInstanceItemsStatus>();
-        }
-        return this.contentInstanceItemsStatuses;
-    }
+	/**
+	 * Gets the value of the contentInstanceItemsStatuses property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the contentInstanceItemsStatuses property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getContentInstanceItemsStatuses().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link ContentInstanceItemsStatus }
+	 * 
+	 * 
+	 */
+	public List<ContentInstanceItemsStatus> getContentInstanceItemsStatuses() {
+		if (contentInstanceItemsStatuses == null) {
+			contentInstanceItemsStatuses = new ArrayList<ContentInstanceItemsStatus>();
+		}
+		return this.contentInstanceItemsStatuses;
+	}
 
 }

@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
 
 public class M2MNetworkSclManager {
 
-	private static final Logger LOG = LoggerFactory.getLogger( M2MNetworkSclManager.class );
+	private static final Logger LOG = LoggerFactory.getLogger(M2MNetworkSclManager.class);
 
 	private static String buildUri(String nwkSclHostAddress, M2MContainerAddress containerId, String startInstanceId, String endInstanceId) {
 		// Additional parameters: startResultIndex, maxResultNumber
@@ -99,9 +99,7 @@ public class M2MNetworkSclManager {
 		sclW.setOnLineStatus(status);
 		scl.setOnLineStatus(status);
 		try {
-			response = restClient.put(
-					new URI(nwkSclBaseUri.toString() + M2MConstants.URL_SCLS + M2MConstants.URL_SLASH + scl.getId()),
-					jaxbConverterFactory.getEntity(sclW));
+			response = restClient.put(new URI(nwkSclBaseUri.toString() + M2MConstants.URL_SCLS + M2MConstants.URL_SLASH + scl.getId()), jaxbConverterFactory.getEntity(sclW));
 			M2MUtils.checkHttpResponseStatus(response);
 			jaxbConverterFactory.getObject(response.getEntity());
 		} catch (Exception e) {
@@ -148,8 +146,7 @@ public class M2MNetworkSclManager {
 		// "Startup method: invalid base uri configuration");
 		// }
 		restClient = RestClient.get();
-		restClient.setCredential(nwkSclBaseUri.getHost(), nwkSclBaseUri.getPort(), deviceConfig.getSclId(),
-				deviceConfig.getNetworkSclBaseToken());
+		restClient.setCredential(nwkSclBaseUri.getHost(), nwkSclBaseUri.getPort(), deviceConfig.getSclId(), deviceConfig.getNetworkSclBaseToken());
 		// scl.setId(connectionParams.getId());
 		updateScl(SclStatusEnumeration.ONLINE);
 	}
@@ -173,9 +170,8 @@ public class M2MNetworkSclManager {
 	public String getSclId(String user) {
 		return scl.getId();
 	}
-	
-	public ContentInstance getSclContentInstance(String user, M2MContainerAddress containerId, long instanceId)
-			throws M2MServiceException {
+
+	public ContentInstance getSclContentInstance(String user, M2MContainerAddress containerId, long instanceId) throws M2MServiceException {
 		if (containerId.isFilterAddress())
 			throw new M2MServiceException("Container id cannot be a filter id");
 		String strInstanceId = getContentInstanceId(instanceId);
@@ -190,16 +186,14 @@ public class M2MNetworkSclManager {
 			M2MUtils.checkHttpResponseStatus(response);
 			return (ContentInstance) jaxbConverterFactory.getObject(response.getEntity());
 		} catch (Exception e) {
-			M2MUtils.mapDeviceException(LOG, e, "Error while getting latest scl content instance " + strInstanceId
-					+ " for container " + containerId.getUrl());
+			M2MUtils.mapDeviceException(LOG, e, "Error while getting latest scl content instance " + strInstanceId + " for container " + containerId.getUrl());
 			return null;
 		} finally {
 			releaseRequestResources(response);
 		}
 	}
 
-	public ContentInstanceItemsList getSclContentInstanceItemsList(String user, M2MContainerAddress containerFilterId, long instanceId)
-			throws M2MServiceException {
+	public ContentInstanceItemsList getSclContentInstanceItemsList(String user, M2MContainerAddress containerFilterId, long instanceId) throws M2MServiceException {
 		if (!containerFilterId.isFilterAddress())
 			throw new M2MServiceException("Container id must be a filter id");
 		String strInstanceId = getContentInstanceId(instanceId);
@@ -214,16 +208,14 @@ public class M2MNetworkSclManager {
 			M2MUtils.checkHttpResponseStatus(response);
 			return (ContentInstanceItemsList) jaxbConverterFactory.getObject(response.getEntity());
 		} catch (Exception e) {
-			M2MUtils.mapDeviceException(LOG, e, "Error while getting latest scl content instance " + strInstanceId
-					+ " for container " + containerFilterId.getUrl());
+			M2MUtils.mapDeviceException(LOG, e, "Error while getting latest scl content instance " + strInstanceId + " for container " + containerFilterId.getUrl());
 			return null;
 		} finally {
 			releaseRequestResources(response);
 		}
 	}
-	
-	public ContentInstanceItems getSclContentInstanceItems(String user, M2MContainerAddress containerId, long startInstanceId,
-			long endInstanceId) throws M2MServiceException {
+
+	public ContentInstanceItems getSclContentInstanceItems(String user, M2MContainerAddress containerId, long startInstanceId, long endInstanceId) throws M2MServiceException {
 		if (containerId.isFilterAddress())
 			throw new M2MServiceException("Container id cannot be a filter id");
 		HttpResponse response = null;
@@ -239,17 +231,16 @@ public class M2MNetworkSclManager {
 			M2MUtils.checkHttpResponseStatus(response);
 			return (ContentInstanceItems) jaxbConverterFactory.getObject(response.getEntity());
 		} catch (Exception e) {
-			M2MUtils.mapDeviceException(LOG, e,
-					"Error while getting content instance items for container " + containerId.getUrl() + " - "
-							+ strStartInstanceId + ", " + strEndInstanceId);
+			M2MUtils.mapDeviceException(LOG, e, "Error while getting content instance items for container " + containerId.getUrl() + " - " + strStartInstanceId + ", "
+					+ strEndInstanceId);
 			return null;
 		} finally {
 			releaseRequestResources(response);
 		}
 	}
 
-	public ContentInstanceItemsList getSclContentInstanceItemsList(String user, M2MContainerAddress containerFilterId,
-			long startInstanceId, long endInstanceId) throws M2MServiceException {
+	public ContentInstanceItemsList getSclContentInstanceItemsList(String user, M2MContainerAddress containerFilterId, long startInstanceId, long endInstanceId)
+			throws M2MServiceException {
 		if (!containerFilterId.isFilterAddress())
 			throw new M2MServiceException("Container id must be a filter id");
 		HttpResponse response = null;
@@ -265,16 +256,15 @@ public class M2MNetworkSclManager {
 			M2MUtils.checkHttpResponseStatus(response);
 			return (ContentInstanceItemsList) jaxbConverterFactory.getObject(response.getEntity());
 		} catch (Exception e) {
-			M2MUtils.mapDeviceException(LOG, e, "Error while getting content instance items list for container "
-					+ containerFilterId.getUrl() + " - " + strStartInstanceId + ", " + strEndInstanceId);
+			M2MUtils.mapDeviceException(LOG, e, "Error while getting content instance items list for container " + containerFilterId.getUrl() + " - " + strStartInstanceId + ", "
+					+ strEndInstanceId);
 			return null;
 		} finally {
 			releaseRequestResources(response);
 		}
 	}
 
-	public ContentInstance createSclContentInstance(String user, M2MContainerAddress containerId, ContentInstance instance)
-			throws M2MServiceException {
+	public ContentInstance createSclContentInstance(String user, M2MContainerAddress containerId, ContentInstance instance) throws M2MServiceException {
 		HttpResponse response = null;
 		URI uri = null;
 		try {
@@ -292,15 +282,13 @@ public class M2MNetworkSclManager {
 		}
 	}
 
-	public ContentInstancesBatchResponse sendContentInstanceBatchRequest(String user, ContentInstancesBatchRequest cibr)
-			throws M2MServiceException {
+	public ContentInstancesBatchResponse sendContentInstanceBatchRequest(String user, ContentInstancesBatchRequest cibr) throws M2MServiceException {
 		HttpResponse response = null;
 		try {
 			lockRequestResources();
 			response = restClient.post(sclCisBatchRequestUri, jaxbConverterFactory.getEntity(cibr));
 			M2MUtils.checkHttpResponseStatus(response);
-			ContentInstancesBatchResponse cibResponse = (ContentInstancesBatchResponse) jaxbConverterFactory.getObject(response
-					.getEntity());
+			ContentInstancesBatchResponse cibResponse = (ContentInstancesBatchResponse) jaxbConverterFactory.getObject(response.getEntity());
 			return cibResponse;
 		} catch (Exception e) {
 			M2MUtils.mapDeviceException(LOG, e, "Error while sending content instance batch request");
@@ -309,13 +297,13 @@ public class M2MNetworkSclManager {
 			releaseRequestResources(response);
 		}
 	}
-	
+
 	public HttpResponse httpGet(String user, String requestUri) throws M2MServiceException {
 		HttpResponse response = null;
 		try {
 			lockRequestResources();
 			response = restClient.get(new URI(nwkSclHostAddress + requestUri));
-			//response = restClient.get(new URI(nwkSclHagUri+relativeUri));
+			// response = restClient.get(new URI(nwkSclHagUri+relativeUri));
 			return response;
 		} catch (Exception e) {
 			M2MUtils.mapDeviceException(LOG, e, "Error while sending a get http request");

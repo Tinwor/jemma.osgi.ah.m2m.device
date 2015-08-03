@@ -20,7 +20,7 @@ import java.util.Properties;
 public interface M2MDeviceConfig {
 
 	public boolean isLocalOnly();
-	
+
 	public boolean isValid();
 
 	public Properties getProperties();
@@ -40,9 +40,9 @@ public interface M2MDeviceConfig {
 	public void setDeviceToken(String deviceToken);
 
 	public String getSclId();
-	
+
 	public long getConnectionRetryTimeout();
 
 	public void setConnectionRetryTimeout(long connectionRetryTimeout);
-	
+
 }
