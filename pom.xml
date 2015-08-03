@@ -23,7 +23,7 @@
 	<groupId>org.energy-home</groupId>
 	<artifactId>jemma.osgi.ah.m2m.device</artifactId>
 	<packaging>bundle</packaging>
-	<version>1.2.16</version>
+	<version>1.2.17</version>
 	<name>M2M Device</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -102,7 +102,7 @@
 							 org.apache.httpcomponents.httpcore;bundle-version="4.1.0"
 						</Require-Bundle>
 						<Bundle-Vendor>Telecom Italia</Bundle-Vendor>
-						<Bundle-Category>Automation@Home</Bundle-Category>
+						<Bundle-Category>JEMMA Automation@Home</Bundle-Category>
 						<Bundle-Activator>org.energy_home.jemma.osgi.ah.m2m.device.M2MDeviceActivator</Bundle-Activator>
 						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
 						<Embed-Dependency>JAXBNamespacePrefixMapper,!*</Embed-Dependency>
@@ -201,6 +201,15 @@
 					<verbose>true</verbose>
 				</configuration>-->
 			</plugin>
+			<!-- to launch: mvn java-formatter:format -->
+			<plugin>
+				<groupId>com.googlecode.maven-java-formatter-plugin</groupId>
+				<artifactId>maven-java-formatter-plugin</artifactId>
+				<version>0.4</version>
+				<configuration>
+					<configFile>${project.basedir}/src/main/resources/formatter.xml</configFile>
+				</configuration>
+			</plugin>			
 		</plugins>
 	</build>
 
